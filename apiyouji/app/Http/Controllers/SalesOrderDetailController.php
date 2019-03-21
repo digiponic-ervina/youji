@@ -16,8 +16,8 @@ class SalesOrderDetailController extends Controller
         $data = Product::all();   
         $count = count($data);
         for($i=0;$i<$count;$i++){
-            $stock_in = StockCards::where('product_id', $data[$i]['id'])->where('type','IN')->sum('quantity');
-            $stock_out = StockCards::where('product_id', $data[$i]['id'])->where('type','OUT')->sum('quantity');
+            $stock_in = StockCards::where('kode_produk', $data[$i]['id'])->where('type','stok_masuk')->sum('stok_masuk');
+            $stock_out = StockCards::where('kode_produk', $data[$i]['id'])->where('type','stok_keluar')->sum('stok_keluar');
             $stock = $stock_in - $stock_out;
             $data[$i]['stock'] = $stock;
         }

@@ -14,7 +14,7 @@ class Product extends Model
 {
     use SoftDeletes;
     
-    protected $table = 'mst_product';
+    protected $table = 'tb_produk';
     protected $appends = ['category', 'unit'];
     protected $fillable = ['code','name','desc','category_id','unit_id','price','discount','created_user','updated_user','deleted_user'];
     protected $hidden = ['created_user','updated_user','deleted_user','created_at','updated_at','deleted_at'];    

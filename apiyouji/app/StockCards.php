@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class StockCards extends Model
 {
     use SoftDeletes;
-    protected $table = 'mst_stock_cards';
-    protected $fillable = ['product_id','quantity','type','datetime','created_user','update_user','deleted_user'];
+    protected $table = 'tb_produk_stok';
+    protected $fillable = ['product_id','type','datetime','created_user','update_user','deleted_user'];
     protected $hidden = ['created_user','updated_user','deleted_user','created_at','updated_at','deleted_at'];    
     
     public function product()
